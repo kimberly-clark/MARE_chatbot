@@ -1,0 +1,148 @@
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+
+#peekobot-container {
+    padding: 1rem 1rem 2rem 1rem;
+    height: var(--peekobot-height);
+    position: relative;
+    width: 700px;
+    margin: auto;
+    top: 50px;
+}
+#peekobot-inner {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    /* Hiding scrollbars is a pain. This is from: https://redstapler.co/css-hidden-scrollbar-while-scrollable-element/ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+#peekobot-inner::-webkit-scrollbar { 
+    display: none;  /* Chrome Safari */
+}
+
+.botText,
+.userText {
+    opacity: 0;  /* Set to activated to show */
+    transform: translateY(-50%); /* Set to activated to move down */
+    transition: all 0.3s 0.3s;
+    background-color: hsl(0, 0%, 90%);
+    padding: 0.5rem 0.7rem;
+    line-height: 1.4;
+    color: black;
+    max-width: 60%;
+    margin-bottom: 0.5rem;
+    animation: floatup .5s forwards;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+
+}
+.botText {
+    position: relative;
+    animation: floatup .5s forwards;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+}
+
+.userText {
+  background-color: hsl(207, 96%, 55%);
+  margin-right: 0;
+  margin-left: auto;
+  color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  border-bottom-right-radius: 2px;
+  text-align: right;
+}
+.choices {
+  opacity: 0; /* Set to active to show */
+  transform: translateY(-50%); /* Set to activated to move down */
+  transition: all 0.3s 0.3s;
+  transition: opacity 0.3s 0.3s;
+  margin-top: 0.5rem;
+  margin-left: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.choice {
+  display: inline-block;
+  outline: none;
+  padding: 0.3rem 0.8rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  border-bottom-right-radius: 2px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+}
+.choice:disabled {
+  color: hsl(0, 0%, 80%);
+  border-color: hsl(0, 0%, 80%);
+  animation: floatright 0.5s forwards;
+}
+
+.choice:hover {
+  background-color: greenyellow;
+}
+
+.activated {
+  opacity: 1;
+  transform: translateY(0);
+}
+.restart {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  outline: none;
+  font-size: 12px;
+  color: hsl(0, 0%, 50%);
+  box-shadow: none;
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 1rem;
+  background: hsl(0, 0%, 100%);
+  padding: 0.2rem 0.5rem; 
+  cursor: pointer;
+}
+
+@keyframes floatup{
+  from {
+    transform: translateY(14px);
+    opacity: .0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes floatright{
+  from {
+    /*transform: translateX(0px);*/
+    opacity: 1;
+  }
+  to {
+    /*transform: translateX(200px);*/
+    opacity: .0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #peekobot-container {
+    width: 100%;
+    border-radius: 0px;
+  }
+}
