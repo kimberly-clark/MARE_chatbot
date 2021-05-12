@@ -13,6 +13,14 @@ const bot = function () {
         inner.scrollTop = inner.scrollHeight;
     };
 
+    const typing = function(a, b) {
+        const typeBubble = document.createElement('div');
+        typeBubble.classList.add('typeBubble')
+        typeBubble.innerHTML = "...";
+
+        return a*b;
+    };
+
     const insertNewChatItem = function (elem) {
         //container.insertBefore(elem, peekobot);
         peekobot.appendChild(elem);
@@ -22,6 +30,10 @@ const bot = function () {
     };
 
     const printResponse = async function (step) {
+        //insert typing indicator
+        const test = typing(4,3);
+        console.log(test);
+
         const response = document.createElement('div');
         response.classList.add('botText');
         //const response = document.createElement('span');

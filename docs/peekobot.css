@@ -1,12 +1,3 @@
-.title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-  top: 20px;
-}
-
 #peekobot-container {
     padding: 1rem 1rem 2rem 1rem;
     height: var(--peekobot-height);
@@ -34,7 +25,6 @@
     opacity: 0;  /* Set to activated to show */
     transform: translateY(-50%); /* Set to activated to move down */
     transition: all 0.3s 0.3s;
-    background-color: hsl(0, 0%, 90%);
     padding: 0.5rem 0.7rem;
     line-height: 1.4;
     color: black;
@@ -51,13 +41,13 @@
     animation: floatup .5s forwards;
     border-radius: 8px;
     border-bottom-left-radius: 2px;
+    background-color: #5584fa;
 }
 
 .userText {
-  background-color: hsl(207, 96%, 55%);
+  background-color: #bcf3d3;
   margin-right: 0;
   margin-left: auto;
-  color: hsl(0, 0%, 100%);
   border-radius: 8px;
   border-bottom-right-radius: 2px;
   text-align: right;
@@ -68,16 +58,17 @@
   transition: all 0.3s 0.3s;
   transition: opacity 0.3s 0.3s;
   margin-top: 0.5rem;
-  margin-left: 22px;
+  margin-left: 12px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  position: absolute;
+  right: 0px;
 }
 .choice {
   display: inline-block;
   outline: none;
   padding: 0.3rem 0.8rem;
-  background-color: hsl(0, 0%, 100%);
   border-radius: 8px;
   border-bottom-right-radius: 2px;
   font-size: 0.9rem;
@@ -87,16 +78,20 @@
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  border: none;
+  border: 0.5px solid black;
+  /*position: fixed;*/
+  background-color: transparent;
 }
 .choice:disabled {
-  color: hsl(0, 0%, 80%);
-  border-color: hsl(0, 0%, 80%);
-  animation: floatright 0.5s forwards;
+  /*display: none;*/
+}
+
+.choice:disabled:hover {
+  background-color: transparent;
 }
 
 .choice:hover {
-  background-color: greenyellow;
+  background-color: #ce97db;
 }
 
 .activated {
@@ -109,13 +104,17 @@
   right: 0.5rem;
   outline: none;
   font-size: 12px;
-  color: hsl(0, 0%, 50%);
   box-shadow: none;
-  border: 1px solid hsl(0, 0%, 60%);
-  border-radius: 1rem;
-  background: hsl(0, 0%, 100%);
   padding: 0.2rem 0.5rem; 
   cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.restart:hover {
+  color: #5584fa;
 }
 
 @keyframes floatup{
@@ -129,14 +128,9 @@
   }
 }
 
-@keyframes floatright{
-  from {
-    /*transform: translateX(0px);*/
-    opacity: 1;
-  }
-  to {
-    /*transform: translateX(200px);*/
-    opacity: .0;
+@media screen and (max-width: 700px) {
+  .restart {
+    right: 5%
   }
 }
 
@@ -145,4 +139,5 @@
     width: 100%;
     border-radius: 0px;
   }
+
 }

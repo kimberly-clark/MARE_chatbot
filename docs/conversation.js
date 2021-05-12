@@ -76,7 +76,7 @@ const chat = {
             },
             {
                 text: "Someone else's",
-                next: 5
+                next: 4
             }
         ]
     },
