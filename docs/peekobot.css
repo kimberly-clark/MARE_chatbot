@@ -83,11 +83,12 @@
   background-color: transparent;
 }
 .choice:disabled {
-  /*display: none;*/
+  display: none;
 }
 
 .choice:disabled:hover {
   background-color: transparent;
+
 }
 
 .choice:hover {
