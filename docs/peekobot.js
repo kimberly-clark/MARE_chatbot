@@ -13,13 +13,13 @@ const bot = function () {
         inner.scrollTop = inner.scrollHeight;
     };
 
-    const typing = function(a, b) {
-        const typeBubble = document.createElement('div');
-        typeBubble.classList.add('typeBubble')
-        typeBubble.innerHTML = "...";
+    // const typing = function(a, b) {
+    //     const typeBubble = document.createElement('div');
+    //     typeBubble.classList.add('typeBubble')
+    //     typeBubble.innerHTML = "...";
 
-        return a*b;
-    };
+    //     return a*b;
+    // };
 
     const insertNewChatItem = function (elem) {
         //container.insertBefore(elem, peekobot);
@@ -30,13 +30,15 @@ const bot = function () {
     };
 
     const printResponse = async function (step) {
-        //insert typing indicator
-        const test = typing(4,3);
-        console.log(test);
+        //test: insert typing indicator
+        //const test = typing(4,3);
+        //console.log(test);
 
         const response = document.createElement('div');
+
+       
         response.classList.add('botText');
-        //const response = document.createElement('span');
+        //test: const response = document.createElement('span');
         response.innerHTML = step.text;
         insertNewChatItem(response);
 
@@ -60,6 +62,8 @@ const bot = function () {
         } else if (step.next) {
             printResponse(chat[step.next]);
         }
+
+
     };
 
     const printChoice = function (choice) {
