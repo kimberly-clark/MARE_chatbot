@@ -51,7 +51,7 @@
 const chat = {
     1: {
         text: "Hi there! I'm the race and modern architecture chatbot. Nice to meet you! 👋",
-        next: 23
+        next: 2
     },
     2: {
         text: "This is an choice-driven chatbot. Use the options below to guide the conversation.",
